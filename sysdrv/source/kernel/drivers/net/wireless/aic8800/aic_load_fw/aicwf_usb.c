@@ -1743,7 +1743,7 @@ static void aicwf_usb_disconnect(struct usb_interface *intf)
     kfree(usb_dev->bus_if);
     kfree(usb_dev);
 }
-#if 0
+#if 1
 static int aicwf_usb_suspend(struct usb_interface *intf, pm_message_t state)
 {
     struct aic_usb_dev *usb_dev =
@@ -1789,11 +1789,11 @@ static struct usb_driver aicwf_usbdrvr = {
     .probe = aicwf_usb_probe,
     .disconnect = aicwf_usb_disconnect,
     .id_table = aicwf_usb_id_table,
-    //.suspend = aicwf_usb_suspend,
-    //.resume = aicwf_usb_resume,
-    //.reset_resume = aicwf_usb_reset_resume,
-    .supports_autosuspend = 0,
-    .disable_hub_initiated_lpm = 1,
+    .suspend = aicwf_usb_suspend,
+    .resume = aicwf_usb_resume,
+    .reset_resume = aicwf_usb_reset_resume,
+    .supports_autosuspend = 1,
+    .disable_hub_initiated_lpm = 0,
 };
 
 void aicwf_usb_register(void)
