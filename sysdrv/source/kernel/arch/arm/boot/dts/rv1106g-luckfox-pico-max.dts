@@ -127,3 +127,14 @@
 &rtc {
 	status = "okay";
 };
+
+&i2s0_8ch {
+	#sound-dai-cells = <0>;
+	status = "okay";
+};
+
+&acodec {
+	#sound-dai-cells = <0>;
+	// pa-ctl-gpios = <&gpio1 RK_PA1 GPIO_ACTIVE_HIGH>;
+	status = "okay";
+};
