@@ -3,6 +3,7 @@
  * Copyright (c) 2022 Rockchip Electronics Co., Ltd.
  */
 #include "rv1106-amp.dtsi"
+#include "rockchip-pinconf.dtsi"
 
 / {
 	chosen {
@@ -105,7 +106,7 @@
 };
 
 &csi2_dphy0 {
-	status = "okay";
+	status = "disable";
 
 	ports {
 		#address-cells = <1>;
@@ -170,7 +171,7 @@
 };
 
 &i2c4 {
-	status = "okay";
+	status = "disable";
 	clock-frequency = <400000>;
 	pinctrl-names = "default";
 	pinctrl-0 = <&i2c4m2_xfer>;
@@ -181,7 +182,7 @@
 		reg = <0x30>;
 		clocks = <&cru MCLK_REF_MIPI0>;
 		clock-names = "xvclk";
-		pwdn-gpios = <&gpio3 RK_PC5 GPIO_ACTIVE_HIGH>;
+		// pwdn-gpios = <&gpio3 RK_PC5 GPIO_ACTIVE_HIGH &pcfg_pull_up_drv_level_5>;
 		pinctrl-names = "default";
 		pinctrl-0 = <&mipi_refclk_out0>;
 		rockchip,camera-module-index = <0>;
@@ -209,7 +210,7 @@
 		reg = <0x30>;
 		clocks = <&cru MCLK_REF_MIPI1>;
 		clock-names = "xvclk";
-		pwdn-gpios = <&gpio3 RK_PD3 GPIO_ACTIVE_HIGH>;
+		// pwdn-gpios = <&gpio3 RK_PD3 GPIO_ACTIVE_HIGH>;
 		pinctrl-names = "default";
 		pinctrl-0 = <&mipi_refclk_out1>;
 		rockchip,camera-module-index = <0>;
@@ -226,7 +227,7 @@
 };
 
 &mipi0_csi2 {
-	status = "okay";
+	status = "disable";
 
 	ports {
 		#address-cells = <1>;
@@ -292,7 +293,7 @@
 };
 
 &rkcif_mipi_lvds {
-	status = "okay";
+	status = "disable";
 
 	pinctrl-names = "default";
 	pinctrl-0 = <&mipi_pins>;
@@ -305,7 +306,7 @@
 };
 
 &rkcif_mipi_lvds_sditf {
-	status = "okay";
+	status = "disable";
 
 	port {
 		/* MIPI CSI-2 endpoint */
@@ -345,7 +346,7 @@
 };
 
 &rkisp_vir0 {
-	status = "okay";
+	status = "disable";
 
 	port@0 {
 		isp_in: endpoint {
@@ -470,11 +471,11 @@
 	// 	};
 	// };
 
-    // gpio1-pc7 {
-    //     gpio1_pc7:gpio1-pc7 {
-    //         rockchip,pins = <1 RK_PC7 RK_FUNC_GPIO &pcfg_pull_none>;
-    // };
-	// };
+    gpio3-pc5 {
+        gpio3_pc5:gpio3-pc5 {
+            rockchip,pins = <3 RK_PC5 RK_FUNC_GPIO &pcfg_pull_up_drv_level_10>;
+    };
+	};
 };
 
 
