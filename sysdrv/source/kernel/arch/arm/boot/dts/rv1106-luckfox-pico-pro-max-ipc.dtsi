@@ -290,13 +290,13 @@
 
 &rkcif {
 	status = "okay";
+	pinctrl-names = "default";
+	pinctrl-0 = <&mipi_pins>;
 };
 
 &rkcif_mipi_lvds {
 	status = "disable";
-
-	pinctrl-names = "default";
-	pinctrl-0 = <&mipi_pins>;
+	
 	port {
 		/* MIPI CSI-2 endpoint */
 		cif_mipi_in: endpoint {
@@ -320,8 +320,6 @@
 &rkcif_mipi_lvds1 {
 	status = "okay";
 
-	pinctrl-names = "default";
-	pinctrl-0 = <&mipi_pins>;
 	port {
 		/* MIPI CSI-2 endpoint */
 		cif_mipi_in1: endpoint {
