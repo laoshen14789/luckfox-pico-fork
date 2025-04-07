@@ -106,7 +106,7 @@
 };
 
 &csi2_dphy1 {
-	status = "disable";
+	status = "okay";
 
 	ports {
 		#address-cells = <1>;
@@ -139,7 +139,7 @@
 };
 
 &csi2_dphy2 {
-	status = "okay";
+	status = "disable";
 
 	ports {
 		#address-cells = <1>;
@@ -171,7 +171,7 @@
 };
 
 &i2c4 {
-	status = "disable";
+	status = "okay";
 	clock-frequency = <400000>;
 	pinctrl-names = "default";
 	pinctrl-0 = <&i2c4m2_xfer>;
@@ -199,7 +199,7 @@
 };
 
 &i2c3 {
-	status = "okay";
+	status = "disable";
 	clock-frequency = <400000>;
 	pinctrl-names = "default";
 	pinctrl-0 = <&i2c3m2_xfer>;
@@ -228,7 +228,7 @@
 };
 
 &mipi0_csi2 {
-	status = "disable";
+	status = "okay";
 
 	ports {
 		#address-cells = <1>;
@@ -259,7 +259,7 @@
 };
 
 &mipi1_csi2 {
-	status = "okay";
+	status = "disable";
 
 	ports {
 		#address-cells = <1>;
@@ -296,7 +296,7 @@
 };
 
 &rkcif_mipi_lvds {
-	status = "disable";
+	status = "okay";
 	
 	port {
 		/* MIPI CSI-2 endpoint */
@@ -307,7 +307,7 @@
 };
 
 &rkcif_mipi_lvds_sditf {
-	status = "disable";
+	status = "okay";
 
 	port {
 		/* MIPI CSI-2 endpoint */
@@ -319,7 +319,7 @@
 
 
 &rkcif_mipi_lvds1 {
-	status = "okay";
+	status = "disable";
 
 	port {
 		/* MIPI CSI-2 endpoint */
@@ -330,7 +330,7 @@
 };
 
 &rkcif_mipi_lvds1_sditf {
-	status = "okay";
+	status = "disable";
 
 	port {
 		/* MIPI CSI-2 endpoint */
@@ -345,7 +345,7 @@
 };
 
 &rkisp_vir0 {
-	status = "disable";
+	status = "okay";
 
 	port@0 {
 		isp_in: endpoint {
@@ -355,7 +355,7 @@
 };
 
 &rkisp_vir1 {
-	status = "okay";
+	status = "disable";
 
 	port@0 {
 		isp_in1: endpoint {
