@@ -1,5 +1,5 @@
 #!/bin/sh
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/root/rv1106/lib
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/rv1106/lib
 [ -f /etc/profile.d/RkEnv.sh ] && source /etc/profile.d/RkEnv.sh
 case $1 in
 	start)

@@ -2598,6 +2598,10 @@ function build_firmware() {
 	__RUN_POST_BUILD_SCRIPT
 	post_overlay
 
+
+	msg_info "copy rootfs patch to $RK_PROJECT_OUTPUT/rootfs_${RK_LIBC_TPYE}_${RK_CHIP}"
+	cp -r -v $SDK_SYSDRV_DIR/source/rootfs_patch/rootfs/* $RK_PROJECT_OUTPUT/rootfs_${RK_LIBC_TPYE}_${RK_CHIP}
+	
 	if [ -n "$GLOBAL_INITRAMFS_BOOT_NAME" ]; then
 		build_mkimg boot $RK_PROJECT_PACKAGE_ROOTFS_DIR
 	fi

@@ -297,7 +297,7 @@
 
 &rkcif_mipi_lvds {
 	status = "okay";
-	
+	wait-line = <648>;
 	port {
 		/* MIPI CSI-2 endpoint */
 		cif_mipi_in: endpoint {
