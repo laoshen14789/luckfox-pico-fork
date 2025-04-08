@@ -1073,7 +1073,7 @@ static const struct panel_desc ampire_am800480r3tmqwa1h = {
 };
 
 static const struct display_timing santek_st0700i5y_rbslw_f_timing = {
-	.pixelclock = { 23000000, 25000000, 27000000 },
+	.pixelclock = { 33000000, 33000000, 33000000 },
 	.hactive = { 800, 800, 800 },
 	.hfront_porch = { 4, 8, 24 },
 	.hback_porch = { 4, 8, 24 },

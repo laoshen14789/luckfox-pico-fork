@@ -3,6 +3,10 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/rv1106/lib
 [ -f /etc/profile.d/RkEnv.sh ] && source /etc/profile.d/RkEnv.sh
 case $1 in
 	start)
+        insmod_ko.sh
+        echo 324 > /sys/devices/platform/rkcif-mipi-lvds/wait_line
+        rkaiq_3A_server &
+
 #		sh /oem/usr/bin/RkLunch.sh
 		;;
 	stop)
