@@ -1315,7 +1315,7 @@ static const struct imx415_mode supported_modes_2lane[] = {
 		.mipi_freq_idx = 1,
 		.bpp = 12,
 		.vc[PAD0] = V4L2_MBUS_CSI2_CHANNEL_0,
-		.xvclk = IMX415_XVCLK_FREQ_27M,
+		.xvclk = IMX415_XVCLK_FREQ_37M,
 	},
 	{
 		/* 1H period = (1100 clock) = (1100 * 1 / 74.25MHz) */
@@ -1335,7 +1335,7 @@ static const struct imx415_mode supported_modes_2lane[] = {
 		.mipi_freq_idx = 4,
 		.bpp = 12,
 		.vc[PAD0] = V4L2_MBUS_CSI2_CHANNEL_0,
-		.xvclk = IMX415_XVCLK_FREQ_27M,
+		.xvclk = IMX415_XVCLK_FREQ_37M,
 	},
 };
 
