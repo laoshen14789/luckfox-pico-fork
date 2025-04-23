@@ -228,12 +228,12 @@
 			csi_dphy_input2: endpoint@1 {
 				reg = <1>;
 				remote-endpoint = <&sc530ai_out>;
-				data-lanes = <1 2>;
+				data-lanes = <1 2 3 4>;
 			};
 			csi_dphy_input4: endpoint@2 {
 				reg = <2>;
 				remote-endpoint = <&imx415_out>;
-				data-lanes = <1 2 3 4>;
+				data-lanes = <1 2>;
 			};
 		};
 
@@ -326,7 +326,7 @@
 		port {
 			sc530ai_out: endpoint {
 				remote-endpoint = <&csi_dphy_input2>;
-				data-lanes = <1 2>;
+				data-lanes = <1 2 3 4>;
 			};
 		};
 	};
@@ -347,7 +347,7 @@
 		port {
 			imx415_out: endpoint {
 				remote-endpoint = <&csi_dphy_input4>;
-				data-lanes = <1 2 3 4>;
+				data-lanes = <1 2>;
 			};
 		};
 	};
@@ -560,6 +560,20 @@
 
 &vop {
 	status = "okay";
+};
+
+&i2c4 {
+    status = "okay";
+	tsc2007@48 {
+		compatible = "ti,tsc2007";
+		reg = <0x48>;
+		interrupt-parent = <&gpio0>;
+		interrupts = <RK_PA2 IRQ_TYPE_EDGE_FALLING>;
+		gpios = <&gpio0 RK_PA2 GPIO_ACTIVE_LOW>;
+		pendown-gpio = <&gpio0 RK_PA2 GPIO_ACTIVE_LOW>;
+		ti,x-plate-ohms = <450>;
+		wakeup-source;
+	};
 };
 
 /*****************************PINCTRL********************************/

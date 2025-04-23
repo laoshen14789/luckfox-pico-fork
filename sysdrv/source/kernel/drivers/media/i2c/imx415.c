@@ -1300,26 +1300,6 @@ static const struct imx415_mode supported_modes_2lane[] = {
 	{
 		/* 1H period = (1100 clock) = (1100 * 1 / 74.25MHz) */
 		.bus_fmt = MEDIA_BUS_FMT_SGBRG12_1X12,
-		.width = 3864,
-		.height = 2192,
-		.max_fps = {
-			.numerator = 10000,
-			.denominator = 150000,
-		},
-		.exp_def = 0x08ca - 0x08,
-		.hts_def = 0x0898 * IMX415_2LANES * 2,
-		.vts_def = 0x08ca,
-		.global_reg_list = NULL,
-		.reg_list = imx415_linear_12bit_3864x2192_891M_regs_2lane,
-		.hdr_mode = NO_HDR,
-		.mipi_freq_idx = 1,
-		.bpp = 12,
-		.vc[PAD0] = V4L2_MBUS_CSI2_CHANNEL_0,
-		.xvclk = IMX415_XVCLK_FREQ_37M,
-	},
-	{
-		/* 1H period = (1100 clock) = (1100 * 1 / 74.25MHz) */
-		.bus_fmt = MEDIA_BUS_FMT_SGBRG12_1X12,
 		.width = 1284,
 		.height = 720,
 		.max_fps = {
@@ -1333,6 +1313,26 @@ static const struct imx415_mode supported_modes_2lane[] = {
 		.reg_list = imx415_linear_12bit_1284x720_2376M_regs_2lane,
 		.hdr_mode = NO_HDR,
 		.mipi_freq_idx = 4,
+		.bpp = 12,
+		.vc[PAD0] = V4L2_MBUS_CSI2_CHANNEL_0,
+		.xvclk = IMX415_XVCLK_FREQ_37M,
+	},
+	{
+		/* 1H period = (1100 clock) = (1100 * 1 / 74.25MHz) */
+		.bus_fmt = MEDIA_BUS_FMT_SGBRG12_1X12,
+		.width = 3864,
+		.height = 2192,
+		.max_fps = {
+			.numerator = 10000,
+			.denominator = 150000,
+		},
+		.exp_def = 0x08ca - 0x08,
+		.hts_def = 0x0898 * IMX415_2LANES * 2,
+		.vts_def = 0x08ca,
+		.global_reg_list = NULL,
+		.reg_list = imx415_linear_12bit_3864x2192_891M_regs_2lane,
+		.hdr_mode = NO_HDR,
+		.mipi_freq_idx = 1,
 		.bpp = 12,
 		.vc[PAD0] = V4L2_MBUS_CSI2_CHANNEL_0,
 		.xvclk = IMX415_XVCLK_FREQ_37M,
